@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
 import React from "react";
-import ScreenHeader from "../../components/ScreenComponents/ScreenHeader";
-import TenantListCard from "./components/TenantListCard";
+import { View, Text } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+
 import TenantCard from "./components/TenantCard";
+import TenantListCard from "./components/TenantListCard";
+import ScreenHeader from "../../components/ScreenComponents/ScreenHeader";
 
 export default function TenantListScreen() {
   return (
@@ -34,10 +35,10 @@ export default function TenantListScreen() {
         />
       </View>
       <View className="px-3">
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2}/>
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2}/>
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2}/>
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2}/>
+        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
+        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
+        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
+        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
       </View>
     </>
   );
