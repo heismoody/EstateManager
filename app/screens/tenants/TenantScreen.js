@@ -3,7 +3,9 @@ import React from "react";
 import ScreenHeader from "../../components/ScreenComponents/ScreenHeader";
 import TransactionCard from "../../components/ScreenComponents/TransactionCard";
 
-export default function TenantScreen() {
+export default function TenantScreen({route}) {
+  const individual = route.params;
+
   return (
     <>
       <ScreenHeader backButton title={"Tenant"} />
@@ -21,7 +23,7 @@ export default function TenantScreen() {
             </View>
           </View>
           <View>
-            <Text className="text-2xl font-extrabold">Lesile Alexander</Text>
+            <Text className="text-2xl font-extrabold">{individual.name}</Text>
             <Text className="text-base font-extrabold opacity-50">
               Contact No: 0684298314
             </Text>
@@ -32,10 +34,10 @@ export default function TenantScreen() {
               Joined: 20/11/2023
             </Text>
             <Text className="text-base font-extrabold opacity-50">
-              House No: 1
+              House No: {individual.houseNo}
             </Text>
             <Text className="text-base font-extrabold opacity-50">
-              Room No: 2
+              Room No: {individual.RoomNo}
             </Text>
           </View>
         </View>

@@ -1,12 +1,33 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList, FlatListComponent } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import TenantCard from "./components/TenantCard";
 import TenantListCard from "./components/TenantListCard";
 import ScreenHeader from "../../components/ScreenComponents/ScreenHeader";
 
-export default function TenantListScreen() {
+export default function TenantListScreen({navigation}) {
+  const tenats = [{
+    id: 1,
+    name: "Moody Amin",
+    houseNo: 1,
+    RoomNo: 2
+  },{
+    id: 2,
+    name: "Evans Victor",
+    houseNo: 2,
+    RoomNo: 2
+  },{
+    id: 3,
+    name: "Amin Juma",
+    houseNo: 2,
+    RoomNo: 4
+  },{
+    id: 4,
+    name: "Lailath Mustapha",
+    houseNo: 3,
+    RoomNo: 1
+  }]
   return (
     <>
       <ScreenHeader backButton title={"Tenants List"} />
@@ -35,10 +56,14 @@ export default function TenantListScreen() {
         />
       </View>
       <View className="px-3">
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
-        <TenantCard name={"Moody Amin"} houseNo={1} RoomNo={2} />
+        <FlatList
+          data={tenats}
+          keyExtractor={(data) => data.id.toString()}
+          key={tenats.id}
+          renderItem={({item}) => (
+            <TenantCard data={item} onpress={() => navigation.navigate("TenantDetails", item)} />
+          )}
+        />
       </View>
     </>
   );

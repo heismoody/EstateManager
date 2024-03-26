@@ -21,10 +21,12 @@ export default function ScreenHeader({ backButton = false, title }) {
         <View className="flex flex-row items-center gap-x-2">
           <MaterialIcons name="notifications-none" size={28} color="white" />
           <View className="w-10 h-10 bg-red-900 rounded-full overflow-hidden">
-            <Image
-              source={require("../../../assets/avatar.jpg")}
-              style={{ width: 48, height: 48, resizeMode: "cover" }}
-            />
+          <Image
+            source={{
+              width: 50,
+              height: 70,
+              uri: "https://img.freepik.com/free-photo/positive-overjoyed-dark-skinned-man-points-with-both-index-fingers-hints-something-wears-casual-green-jumper-smiles-broadly_273609-23582.jpg?w=740&t=st=1710941687~exp=1710942287~hmac=c05573fc06b31accba2d29b62e8ae17d34430a8329cf2487d348cc77c1473bd6",
+            }}/>
           </View>
         </View>
       )}
