@@ -3,11 +3,10 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
-import WelcomeScreen from '../screens/WelcomeScreen';
 import PropertyScreen from '../screens/properties/PropertyScreen';
 import TenantNavigator from './TenantNavigator';
 import CashManagmentScreen from '../screens/cash/CashManagmentScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
 
 const Tab = createBottomTabNavigator();
 

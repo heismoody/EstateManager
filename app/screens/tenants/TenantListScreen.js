@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, FlatListComponent } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import TenantCard from "./components/TenantCard";

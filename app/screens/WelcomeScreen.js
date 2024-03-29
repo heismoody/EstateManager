@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import WelcomeBar from "../components/ScreenComponents/WelcomeBar";
 import Revenue from "../components/charts/Revenue";
 import ScreenHeader from "../components/ScreenComponents/ScreenHeader";
+import AppBottom from "../components/Form/AddPropertyForm";
 
 const data = [
   {
@@ -45,20 +46,24 @@ const data = [
   },
 ];
 export default function WelcomeScreen() {
+  const [openUp, setOpenUp] = useState(false);
   return (
     <>
       <ScreenHeader />
-      <View className="py-2 px-3">
-        <Text className="text-[26px] font-extrabold">Hi, LandLord!</Text>
-        <Text className="text-sm">Welcome Back</Text>
-      </View>
       <ScrollView>
+        <View className="py-2 px-3">
+          <Text className="text-[26px] font-extrabold">Hi, LandLord!</Text>
+          <Text className="text-sm">Welcome Back</Text>
+        </View>
         <FlatList
           data={data}
           keyExtractor={(data) => data.id.toString()}
           key={data.id}
           renderItem={({ item }) => (
-            <TouchableOpacity className="flex-grow m-[2px] py-4 w-[32%] border-[1px] rounded-md border-black/10" onPress={()=>{}}>
+            <TouchableOpacity
+              className="flex-grow m-[2px] py-4 w-[32%] border-[1px] rounded-md border-black/10"
+              onPress={() => setOpenUp(!openUp)}
+            >
               <View className="items-center">
                 <Image
                   source={item.icon}
@@ -98,6 +103,11 @@ export default function WelcomeScreen() {
           </View>
         </View>
       </ScrollView>
+      {openUp && (
+        <AppBottom>
+          
+        </AppBottom>
+      )}
     </>
   );
 }
