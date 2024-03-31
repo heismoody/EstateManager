@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function AppBottom({children}) {
+export default function BottomSheetComponent({children}) {
   // ref
   const bottomSheetRef = useRef(null);
   const [isOpen, setIsOpen] = useState(true);
@@ -15,13 +15,13 @@ export default function AppBottom({children}) {
   // renders
   return (
     <GestureHandlerRootView
-      className={`bg-black/70 absolute w-[100%] h-[100%] ${
+      className={`bg-black/80 absolute w-[100%] h-[100%] ${
         !isOpen && "hidden"
       }`}
     >
       <BottomSheet
         ref={bottomSheetRef}
-        snapPoints={["65%"]}
+        snapPoints={["40%"]}
         enablePanDownToClose={true}
         onClose={closeBottomSheet}
       >

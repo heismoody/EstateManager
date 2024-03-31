@@ -11,7 +11,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import WelcomeBar from "../components/ScreenComponents/WelcomeBar";
 import Revenue from "../components/charts/Revenue";
 import ScreenHeader from "../components/ScreenComponents/ScreenHeader";
-import AppBottom from "../components/Form/AddPropertyForm";
+import BottomSheetComponent from "../components/Form/BottomSheetComponent";
+import PropertyForm from "../components/Form/PropertyForm";
 
 const data = [
   {
@@ -104,9 +105,9 @@ export default function WelcomeScreen() {
         </View>
       </ScrollView>
       {openUp && (
-        <AppBottom>
-          
-        </AppBottom>
+        <BottomSheetComponent>
+          <PropertyForm/>
+        </BottomSheetComponent>
       )}
     </>
   );
